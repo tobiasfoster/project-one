@@ -13,7 +13,7 @@ export function TransactionsTableHeader({
   sortOrder: "asc" | "desc"
 }) {
   return (
-    <thead className="border-b border-db-primary-100 bg-db-primary-50">
+    <thead className="border-b border-eb-primary-100 bg-eb-primary-50">
       {table.getHeaderGroups().map(headerGroup => (
         <tr key={headerGroup.id}>
           {headerGroup.headers.map((header) => {
@@ -29,7 +29,7 @@ export function TransactionsTableHeader({
               <th
                 key={header.id}
                 aria-sort={ariaSort}
-                className="px-md py-sm text-left text-db-primary-600"
+                className="px-eb-md py-eb-sm text-left text-eb-primary-600"
                 scope="col"
               >
                 {flexRender(

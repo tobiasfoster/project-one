@@ -11,7 +11,7 @@ export function Separator({
   return (
     <BaseSeparator
       className={cn(
-        "shrink-0 bg-db-primary-200",
+        "shrink-0 bg-eb-primary-200",
         orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
         className,
       )}

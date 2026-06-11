@@ -9,8 +9,8 @@ import {
   RouterProvider,
 } from "@tanstack/react-router"
 import { useState, type ComponentType } from "react"
-import { validateTransactionsSearch } from "@/features/transactions/transactions.search"
-import { useProfileStore } from "@/features/profile/profile.store"
+import { validateTransactionsSearch } from "@/features/transactions/utils"
+import { useProfileStore } from "@/features/profile/store/profile.store"
 import type { Profile } from "@/types"
 
 function makeQueryClient() {

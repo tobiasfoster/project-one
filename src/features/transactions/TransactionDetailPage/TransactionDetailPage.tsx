@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Link, useParams } from "@tanstack/react-router"
 import { ArrowLeftIcon } from "@/components/ui/icons/ArrowLeftIcon/ArrowLeftIcon"
-import { getTransaction } from "../transactions.api"
+import { getTransaction } from "../api/transactions.api"
 import { queryKeys } from "@/lib/api/query-keys"
 import { formatCurrency } from "@/lib/utils/format-currency/formatCurrency"
 import { formatDate } from "@/lib/utils/format-date/formatDate"
@@ -35,7 +35,7 @@ export function TransactionDetailPage() {
   if (isLoading) {
     return (
       <div>
-        <Skeleton className="mb-lg h-8 w-48" />
+        <Skeleton className="mb-eb-lg h-8 w-48" />
         <Skeleton className="h-64 rounded-xl" />
       </div>
     )
@@ -44,7 +44,7 @@ export function TransactionDetailPage() {
   return (
     <div>
       <Button
-        className="mb-md"
+        className="mb-eb-md"
         render={<Link to="/transactions" />}
         size="sm"
         variant="ghost"
@@ -57,37 +57,37 @@ export function TransactionDetailPage() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-sm">
+          <div className="flex items-center gap-eb-sm">
             <CardTitle as="h2">Transaction Information</CardTitle>
             <Badge casing="upper">{data!.type}</Badge>
           </div>
         </CardHeader>
-        <CardContent className="grid gap-md sm:grid-cols-2">
+        <CardContent className="grid gap-eb-md sm:grid-cols-2">
           <div>
-            <p className="text-sm text-db-primary-500">Amount</p>
+            <p className="text-sm text-eb-primary-500">Amount</p>
             <p
               className={cn(
                 "text-2xl font-bold",
-                data!.amount >= 0 ? "text-db-accent-600" : "text-db-primary-900",
+                data!.amount >= 0 ? "text-eb-accent-600" : "text-eb-primary-900",
               )}
             >
               {formatCurrency(data!.amount)}
             </p>
           </div>
           <div>
-            <p className="text-sm text-db-primary-500">Date</p>
-            <p className="text-lg font-medium text-db-primary-900">
+            <p className="text-sm text-eb-primary-500">Date</p>
+            <p className="text-lg font-medium text-eb-primary-900">
               {formatDate(data!.date)}
             </p>
           </div>
           <div>
-            <p className="text-sm text-db-primary-500">Account ID</p>
-            <p className="font-mono text-sm text-db-primary-700">{data!.accountId}</p>
+            <p className="text-sm text-eb-primary-500">Account ID</p>
+            <p className="font-mono text-sm text-eb-primary-700">{data!.accountId}</p>
           </div>
           {data!.counterparty && (
             <div>
-              <p className="text-sm text-db-primary-500">Counterparty</p>
-              <p className="text-lg font-medium text-db-primary-900">
+              <p className="text-sm text-eb-primary-500">Counterparty</p>
+              <p className="text-lg font-medium text-eb-primary-900">
                 {data!.counterparty}
               </p>
             </div>

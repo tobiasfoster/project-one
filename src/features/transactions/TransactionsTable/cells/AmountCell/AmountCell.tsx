@@ -5,8 +5,8 @@ export function AmountCell({ amount }: { amount: number }) {
     <span
       className={
         amount >= 0
-          ? "font-medium text-db-accent-600"
-          : "font-medium text-db-primary-900"
+          ? "font-medium text-eb-accent-600"
+          : "font-medium text-eb-primary-900"
       }
     >
       {formatCurrency(amount)}

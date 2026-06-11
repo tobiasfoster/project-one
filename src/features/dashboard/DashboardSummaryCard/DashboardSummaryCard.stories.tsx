@@ -19,8 +19,8 @@ export const AccountBalance: Story = {
     title: "Primary Savings",
     value: "$12,450.75",
     icon: CreditCardIcon,
-    color: "text-db-primary-600",
-    bg: "bg-db-primary-50",
+    color: "text-eb-primary-600",
+    bg: "bg-eb-primary-50",
   },
 }
 
@@ -29,8 +29,8 @@ export const MonthlyDeposits: Story = {
     title: "Monthly Deposits",
     value: "$4,400.00",
     icon: ArrowDownLeftIcon,
-    color: "text-db-accent-600",
-    bg: "bg-db-accent-50",
+    color: "text-eb-accent-600",
+    bg: "bg-eb-accent-50",
   },
 }
 
@@ -39,7 +39,7 @@ export const MonthlyWithdrawals: Story = {
     title: "Monthly Withdrawals",
     value: "-$1,651.88",
     icon: ArrowUpRightIcon,
-    color: "text-db-warning-600",
-    bg: "bg-db-warning-50",
+    color: "text-eb-warning-600",
+    bg: "bg-eb-warning-50",
   },
 }

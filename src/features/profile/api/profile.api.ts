@@ -1,6 +1,6 @@
 import { apiClient } from "@/lib/api/client"
 import type { Profile } from "@/types"
-import type { ProfileFormData } from "./profile.schema"
+import type { ProfileFormData } from "../schema/profile.schema"
 
 export async function getProfile(): Promise<Profile> {
   return apiClient<Profile>("/api/profile")

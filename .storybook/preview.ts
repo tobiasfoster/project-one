@@ -1,7 +1,6 @@
 import type { Preview } from "@storybook/react-vite"
 import { initialize, mswLoader } from "msw-storybook-addon"
-import { withQueryClient } from "../src/test/storybook"
-import "@fontsource-variable/inter/wght.css"
+import { WithQueryClient } from "../src/test/storybook"
 import "../src/index.css"
 
 initialize({ onUnhandledRequest: "bypass" })
@@ -12,7 +11,7 @@ const preview: Preview = {
     a11y: { test: "todo" },
   },
   loaders: [mswLoader],
-  decorators: [withQueryClient],
+  decorators: [WithQueryClient],
 }
 
 export default preview

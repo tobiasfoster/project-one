@@ -39,6 +39,14 @@ export const updateProfileHandler = http.put("/api/profile", async ({ request, c
     )
   }
 
+  if (body.firstName === "error") {
+    return HttpResponse.json({ message: "An unexpected error occurred" }, { status: 400 })
+  }
+
+  if (body.firstName === "unauth") {
+    return HttpResponse.json({ message: "Unauthorized" }, { status: 401 })
+  }
+
   const updatedUser = updateUser(user, body)
 
   return HttpResponse.json(updatedUser)

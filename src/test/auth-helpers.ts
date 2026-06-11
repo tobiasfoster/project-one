@@ -1,5 +1,5 @@
-import { login } from "@/features/auth/auth.api"
-import { useAuthStore } from "@/features/auth/auth.store"
+import { login } from "@/features/auth/api/auth.api"
+import { useAuthStore } from "@/features/auth/store/auth.store"
 
 export async function loginAsTestUser() {
   const response = await login({

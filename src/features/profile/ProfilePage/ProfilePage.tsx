@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { CameraIcon } from "@/components/ui/icons/CameraIcon/CameraIcon"
-import { getProfile } from "../profile.api"
+import { getProfile } from "../api/profile.api"
 import { queryKeys } from "@/lib/api/query-keys"
 import { PageHeader } from "@/components/shared/PageHeader/PageHeader"
 import { ApiErrorState } from "@/components/shared/ApiErrorState/ApiErrorState"
@@ -45,7 +45,7 @@ export function ProfilePage() {
   if (isLoading) {
     return (
       <div>
-        <Skeleton className="mb-lg h-8 w-32" />
+        <Skeleton className="mb-eb-lg h-8 w-32" />
         <Skeleton className="h-96 rounded-xl" />
       </div>
     )
@@ -63,7 +63,7 @@ export function ProfilePage() {
           <CardTitle as="h2">Personal Information</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="mb-lg flex items-center gap-md">
+          <div className="mb-eb-lg flex items-center gap-eb-md">
             <div className="relative">
               <Avatar
                 fallback={getInitials(data!.firstName, data!.lastName)}
@@ -72,7 +72,7 @@ export function ProfilePage() {
               />
               <button
                 aria-label="Upload avatar"
-                className="absolute bottom-0 right-0 rounded-full bg-db-brand-800 p-sm text-db-on-accent hover:bg-db-brand-700"
+                className="absolute bottom-0 right-0 rounded-full bg-eb-brand-800 p-eb-sm text-eb-on-accent hover:bg-eb-brand-700"
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
               >
@@ -87,12 +87,12 @@ export function ProfilePage() {
               />
             </div>
             <div>
-              <p className="font-medium text-db-primary-900">
+              <p className="font-medium text-eb-primary-900">
                 {data!.firstName}
                 {" "}
                 {data!.lastName}
               </p>
-              <p className="text-sm text-db-primary-500">{data!.email}</p>
+              <p className="text-sm text-eb-primary-500">{data!.email}</p>
             </div>
           </div>
 

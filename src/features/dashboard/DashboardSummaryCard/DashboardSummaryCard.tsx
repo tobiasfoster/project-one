@@ -28,15 +28,15 @@ export function DashboardSummaryCard({
     >
       <Card className="transition-shadow hover:shadow-md">
         <CardHeader className="flex flex-row items-center justify-between pb-sm">
-          <CardTitle as="h2" className="text-sm font-medium text-db-primary-500">
+          <CardTitle as="h2" className="text-sm font-medium text-eb-primary-500">
             {title}
           </CardTitle>
-          <div className={cn("rounded-lg p-sm", bg)}>
+          <div className={cn("rounded-lg p-eb-sm", bg)}>
             <Icon aria-hidden="true" className={cn("h-4 w-4", color)} />
           </div>
         </CardHeader>
         <CardContent>
-          <p className="text-2xl font-bold text-db-primary-900">{value}</p>
+          <p className="text-2xl font-bold text-eb-primary-900">{value}</p>
         </CardContent>
       </Card>
     </motion.div>

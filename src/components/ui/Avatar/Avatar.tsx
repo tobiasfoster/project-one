@@ -19,7 +19,7 @@ export function Avatar({ src, alt, fallback, className, size = "md" }: AvatarPro
   return (
     <BaseAvatar.Root
       className={cn(
-        "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-db-primary-200",
+        "relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-eb-primary-200",
         sizeClasses[size],
         className,
       )}
@@ -28,7 +28,7 @@ export function Avatar({ src, alt, fallback, className, size = "md" }: AvatarPro
         <BaseAvatar.Image alt={alt ?? ""} className="h-full w-full object-cover" src={src} />
       )}
       <BaseAvatar.Fallback
-        className="flex h-full w-full items-center justify-center font-semibold text-db-primary-700"
+        className="flex h-full w-full items-center justify-center font-semibold text-eb-primary-700"
         delay={0}
       >
         {fallback}

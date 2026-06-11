@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { profileSchema, type ProfileFormData } from "../profile.schema"
-import { updateProfile } from "../profile.api"
+import { profileSchema, type ProfileFormData } from "../schema/profile.schema"
+import { updateProfile } from "../api/profile.api"
 import { queryKeys } from "@/lib/api/query-keys"
 import { ApiClientError } from "@/lib/api/client"
 import { Button } from "@/components/ui/Button/Button"
@@ -12,8 +12,9 @@ import { Field, FieldLabel } from "@/components/ui/Field/Field"
 import { FormError } from "@/components/ui/FormError/FormError"
 import { Spinner } from "@/components/ui/Spinner/Spinner"
 import { showToast } from "@/components/ui/Toast/toast-manager"
-import { useProfileStore } from "../profile.store"
+import { useProfileStore } from "../store/profile.store"
 import type { Profile } from "@/types"
+import { ApiErrorState } from "@/components/shared/ApiErrorState/ApiErrorState"
 
 interface ProfileFormProps {
   profile: Profile
@@ -59,6 +60,8 @@ export function ProfileForm({ profile, avatarPreview }: ProfileFormProps) {
       setServerError("")
     },
     onError: (err) => {
+      console.log("error", err)
+
       if (err instanceof ApiClientError && err.fields) {
         Object.entries(err.fields).forEach(([key, message]) => {
           setError(key as keyof ProfileFormData, { message })
@@ -72,16 +75,16 @@ export function ProfileForm({ profile, avatarPreview }: ProfileFormProps) {
 
   return (
     <form
-      className="grid gap-md sm:grid-cols-2"
+      className="grid gap-eb-md sm:grid-cols-2"
       noValidate
       onSubmit={handleSubmit(formData => mutation.mutate(formData))}
     >
       {serverError && (
-        <div
-          className="col-span-full rounded-lg bg-db-danger-50 px-sm py-sm text-sm text-db-danger-600"
-          role="alert"
-        >
-          {serverError}
+        <div className="col-span-full">
+          <ApiErrorState
+            message={serverError}
+            title="Something went wrong"
+          />
         </div>
       )}
 
@@ -150,7 +153,7 @@ export function ProfileForm({ profile, avatarPreview }: ProfileFormProps) {
         >
           {mutation.isPending
             ? (
-                <Spinner className="text-db-on-accent" />
+                <Spinner className="text-eb-on-accent" />
               )
             : (
                 "Save changes"

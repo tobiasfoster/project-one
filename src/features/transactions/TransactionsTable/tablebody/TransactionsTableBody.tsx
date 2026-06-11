@@ -11,10 +11,10 @@ export function TransactionsTableBody({
       {table.getRowModel().rows.map(row => (
         <tr
           key={row.id}
-          className="border-b border-db-primary-50 transition-colors hover:bg-db-primary-50/50"
+          className="border-b border-eb-primary-50 transition-colors hover:bg-eb-primary-50/50"
         >
           {row.getVisibleCells().map(cell => (
-            <td key={cell.id} className="px-md py-sm">
+            <td key={cell.id} className="px-eb-md py-eb-sm">
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </td>
           ))}

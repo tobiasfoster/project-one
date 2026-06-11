@@ -7,7 +7,7 @@ export function Skeleton({
   return (
     <div
       aria-hidden="true"
-      className={cn("animate-pulse rounded-md bg-db-primary-100", className)}
+      className={cn("animate-pulse rounded-md bg-eb-primary-100", className)}
       {...props}
     />
   )
