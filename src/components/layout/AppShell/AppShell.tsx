@@ -144,9 +144,6 @@ export function AppShell() {
           >
             <MenuIcon aria-hidden="true" className="h-5 w-5" />
           </Button>
-          <Link className="text-lg font-bold text-db-primary-900 lg:hidden" to="/dashboard">
-            Eagle Bank
-          </Link>
           <div className="hidden lg:block" />
           <p className="text-sm text-db-primary-500">
             Welcome,

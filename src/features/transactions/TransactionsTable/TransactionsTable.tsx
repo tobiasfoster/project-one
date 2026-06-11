@@ -26,7 +26,7 @@ export function TransactionsTable({
   })
 
   return (
-    <div className="overflow-hidden rounded-xl border border-db-primary-100 bg-db-surface">
+    <div className="overflow-hidden rounded-xl border border-db-primary-100 bg-db-surface max-w-[90vw] overflow-x-auto">
       <table className="w-full text-sm">
         <caption className="sr-only">Transaction history</caption>
         <TransactionsTableHeader sortBy={sortBy} sortOrder={sortOrder} table={table} />
