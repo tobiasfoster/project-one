@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { delay, http, HttpResponse } from "msw"
 import { AccountDetailPage } from "./AccountDetailPage"
 import { accounts } from "@/mocks/data/accounts"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 const account = accounts[0]
 
@@ -11,7 +11,7 @@ const meta = {
   component: AccountDetailPage,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
-  decorators: [withRouter("/app/accounts/$id", `/accounts/${account.id}`)],
+  decorators: [WithRouter("/app/accounts/$id", `/accounts/${account.id}`)],
 } satisfies Meta<typeof AccountDetailPage>
 
 export default meta

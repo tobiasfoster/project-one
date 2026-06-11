@@ -3,7 +3,7 @@ import { delay, http, HttpResponse } from "msw"
 import { ProfilePage } from "./ProfilePage"
 import { users } from "@/mocks/data/users"
 import { ToastProvider } from "@/components/ui/Toast/Toast"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 import type { Profile } from "@/types"
 
 const profile = users[0].profile
@@ -20,7 +20,7 @@ const meta = {
   component: ProfilePage,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
-  decorators: [withToaster, withRouter("/app/profile", "/profile")],
+  decorators: [withToaster, WithRouter("/app/profile", "/profile")],
 } satisfies Meta<typeof ProfilePage>
 
 export default meta

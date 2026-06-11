@@ -5,7 +5,7 @@ import { accounts } from "@/mocks/data/accounts"
 import { transactions } from "@/mocks/data/transactions"
 import { users } from "@/mocks/data/users"
 import { getDashboardData } from "@/mocks/handlers/utils"
-import { withProfile, withRouter } from "@/test/storybook"
+import { WithProfile, WithRouter } from "@/test/storybook"
 
 const dashboardData = getDashboardData(accounts, transactions)
 
@@ -15,8 +15,8 @@ const meta = {
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
   decorators: [
-    withProfile(users[0].profile),
-    withRouter("/app/dashboard", "/dashboard"),
+    WithProfile(users[0].profile),
+    WithRouter("/app/dashboard", "/dashboard"),
   ],
 } satisfies Meta<typeof DashboardPage>
 

@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/Input/Input"
 import { Field, FieldLabel } from "@/components/ui/Field/Field"
 import { FormError } from "@/components/ui/FormError/FormError"
 import { Spinner } from "@/components/ui/Spinner/Spinner"
-import { showToast } from "@/components/ui/Toast/Toast"
+import { showToast } from "@/components/ui/Toast/toast-manager"
 import { useProfileStore } from "../profile.store"
 import type { Profile } from "@/types"
 

@@ -4,7 +4,7 @@ import { fn } from "storybook/test"
 import { TransactionsTableBody } from "./TransactionsTableBody"
 import { createTransactionColumns } from "./create-columns"
 import { transactions } from "@/mocks/data/transactions"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 const noop = fn()
 
@@ -33,7 +33,7 @@ const meta: Meta<typeof TransactionsTableBody> = {
   tags: ["autodocs"],
   parameters: { layout: "padded" },
   // Description cells render <Link>s to the detail route.
-  decorators: [withRouter("/app/transactions", "/transactions")],
+  decorators: [WithRouter("/app/transactions", "/transactions")],
 }
 
 export default meta
