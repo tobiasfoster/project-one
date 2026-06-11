@@ -5,9 +5,11 @@ import "./index.css"
 import { App } from "./app/App/App"
 
 async function enableMocking() {
-  if (import.meta.env.VITE_ENABLE_MOCKS === "true") {
-    const { worker } = await import("./mocks/browser")
-    return worker.start({ onUnhandledRequest: "bypass" })
+  const { worker } = await import("./mocks/browser")
+  await worker.start({ onUnhandledRequest: "bypass" })
+  if (!navigator.serviceWorker.controller) {
+    // First registration didn't take control of this document yet - reload once.
+    window.location.reload()
   }
 }
 
