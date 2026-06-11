@@ -8,7 +8,7 @@ The codebase is deliberately structured to demonstrate **systems thinking** rath
 
 ## Live demo
 
-> Deployed on Vercel. Add the deployment URL here after `vercel deploy`.
+> Deployed on Vercel. [Link](https://project-h318s4tsq-tobiasfosters-projects.vercel.app/).
 
 **Demo credentials** (pre-filled on the login screen):
 
@@ -213,7 +213,7 @@ CI/CD runs from `.github/workflows/deploy.yml`: on push to `main`, it runs the f
 
 ## Disclaimer regarding AI usage
 
-AI has been used to complement the overall output of this project. The scaffolding of Storybook stories has largely been deferred to agents, as well as the initial implementation of tests. It has also acted as a reviewer, leveraging some of the skills included publicly in this repository, and I have applied its suggestions where deemed appropriate. It has also helped structure this README.
+AI has been used to complement the overall output of this project. The scaffolding of Storybook stories has largely been deferred to agents, as well as the initial implementation of tests, and also the theming. It has also acted as a reviewer, leveraging some of the skills included publicly in this repository, and I have applied its suggestions where deemed appropriate. It has also helped structure this README.
 
 ## License
 
