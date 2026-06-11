@@ -89,8 +89,8 @@ function AccountCard({ account }: { account: Account }) {
       initial={{ opacity: 0, y: 8 }}
     >
       <Link params={{ id: account.id }} to="/accounts/$id">
-        <Card className="transition-shadow hover:shadow-md">
-          <CardContent className="p-md">
+        <Card className="transition-shadow hover:shadow-md pt-md">
+          <CardContent>
             <div className="flex items-start justify-between">
               <div>
                 <p className="font-medium text-db-primary-900">{account.name}</p>
