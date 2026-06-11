@@ -13,10 +13,12 @@ import { Field, FieldLabel } from "@/components/ui/Field/Field"
 import { FormError } from "@/components/ui/FormError/FormError"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card/Card"
 import { Spinner } from "@/components/ui/Spinner/Spinner"
+import { useProfileStore } from "@/features/profile/profile.store"
 
 export function RegisterPage() {
   const navigate = useNavigate()
   const setAuth = useAuthStore(s => s.setAuth)
+  const setProfile = useProfileStore(s => s.setProfile)
   const [serverError, setServerError] = useState("")
 
   const {
@@ -30,10 +32,16 @@ export function RegisterPage() {
 
   const onSubmit = async (data: RegisterFormData) => {
     setServerError("")
-    const { ...payload } = data
+    const payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: data.password,
+    }
     try {
       const response = await registerUser(payload)
       setAuth(response.user)
+      setProfile(response.user.profile)
       navigate({ to: "/dashboard" })
     }
     catch (err) {
@@ -88,14 +96,25 @@ export function RegisterPage() {
               )}
 
               <Field>
-                <FieldLabel htmlFor="fullName">Full name</FieldLabel>
+                <FieldLabel htmlFor="firstName">First name</FieldLabel>
                 <Input
-                  autoComplete="name"
-                  hasError={!!errors.fullName}
-                  id="fullName"
-                  {...register("fullName")}
+                  autoComplete="given-name"
+                  hasError={!!errors.firstName}
+                  id="firstName"
+                  {...register("firstName")}
                 />
-                <FormError>{errors.fullName?.message}</FormError>
+                <FormError>{errors.firstName?.message}</FormError>
+              </Field>
+
+              <Field>
+                <FieldLabel htmlFor="lastName">Last name</FieldLabel>
+                <Input
+                  autoComplete="family-name"
+                  hasError={!!errors.lastName}
+                  id="lastName"
+                  {...register("lastName")}
+                />
+                <FormError>{errors.lastName?.message}</FormError>
               </Field>
 
               <Field>
