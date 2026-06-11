@@ -30,7 +30,8 @@ describe("loginSchema", () => {
 describe("registerSchema", () => {
   it("accepts valid registration data", () => {
     const result = registerSchema.safeParse({
-      fullName: "Jane Doe",
+      firstName: "Jane",
+      lastName: "Doe",
       email: "new@email.com",
       password: "Password1",
       confirmPassword: "Password1",
@@ -40,7 +41,8 @@ describe("registerSchema", () => {
 
   it("rejects mismatched passwords", () => {
     const result = registerSchema.safeParse({
-      fullName: "Jane Doe",
+      firstName: "Jane",
+      lastName: "Doe",
       email: "new@email.com",
       password: "Password1",
       confirmPassword: "Different1",
@@ -50,7 +52,8 @@ describe("registerSchema", () => {
 
   it("requires uppercase and number in password", () => {
     const result = registerSchema.safeParse({
-      fullName: "Jane Doe",
+      firstName: "Jane",
+      lastName: "Doe",
       email: "new@email.com",
       password: "password",
       confirmPassword: "password",
