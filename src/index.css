@@ -326,7 +326,7 @@
 
 
 @theme {
-  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
 
   --spacing-eb-xs: 0.25rem;
   --spacing-eb-sm: 0.5rem;
