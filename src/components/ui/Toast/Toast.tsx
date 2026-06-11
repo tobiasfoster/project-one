@@ -4,8 +4,7 @@ import { CheckCircleIcon } from "@/components/ui/icons/CheckCircleIcon/CheckCirc
 import { AlertCircleIcon } from "@/components/ui/icons/AlertCircleIcon/AlertCircleIcon"
 import { InfoIcon } from "@/components/ui/icons/InfoIcon/InfoIcon"
 import { cn } from "@/lib/utils/cn"
-
-export const toastManager = BaseToast.createToastManager()
+import { toastManager } from "./toast-manager"
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -60,18 +59,4 @@ export function ToastList() {
       ))}
     </>
   )
-}
-
-export function showToast(
-  options: {
-    title: string
-    description?: string
-    type?: "success" | "error" | "info"
-  },
-) {
-  toastManager.add({
-    title: options.title,
-    description: options.description,
-    type: options.type ?? "info",
-  })
 }

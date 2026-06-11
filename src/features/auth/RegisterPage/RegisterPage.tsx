@@ -30,7 +30,7 @@ export function RegisterPage() {
 
   const onSubmit = async (data: RegisterFormData) => {
     setServerError("")
-    const { confirmPassword: _, ...payload } = data
+    const { ...payload } = data
     try {
       const response = await registerUser(payload)
       setAuth(response.user)

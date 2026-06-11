@@ -2,16 +2,16 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { http, HttpResponse } from "msw"
 import { LoginPage } from "./LoginPage"
 import { users } from "@/mocks/data/users"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
-const { password: _password, ...sessionUser } = users[0]
+const { ...sessionUser } = users[0]
 
 const meta = {
   title: "Features/Auth/LoginPage",
   component: LoginPage,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
-  decorators: [withRouter("/login", "/login")],
+  decorators: [WithRouter("/login", "/login")],
 } satisfies Meta<typeof LoginPage>
 
 export default meta
