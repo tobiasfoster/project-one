@@ -2,8 +2,8 @@ import { queryOptions } from "@tanstack/react-query"
 import { apiClient } from "@/lib/api/client"
 import { queryKeys } from "@/lib/api/query-keys"
 import type { AuthResponse, User } from "@/types"
-import type { LoginFormData, RegisterFormData } from "./auth.schemas"
-import { useAuthStore } from "./auth.store"
+import type { LoginFormData, RegisterFormData } from "../schema/auth.schemas"
+import { useAuthStore } from "../store/auth.store"
 
 export async function login(data: LoginFormData): Promise<AuthResponse> {
   return apiClient<AuthResponse>("/api/auth/login", {
@@ -27,6 +27,10 @@ export async function logout(): Promise<void> {
 
 export async function getMe(): Promise<User> {
   return apiClient<User>("/api/auth/me")
+}
+
+export async function unauthorized(): Promise<void> {
+  return apiClient<void>("/api/auth/unauthorized", { method: "POST" })
 }
 
 /**

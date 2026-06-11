@@ -12,7 +12,7 @@ import { PageHeader } from "@/components/shared/PageHeader/PageHeader"
 import { ApiErrorState } from "@/components/shared/ApiErrorState/ApiErrorState"
 import { Card, CardContent, CardHeader } from "@/components/ui/Card/Card"
 import { Skeleton } from "@/components/ui/Skeleton/Skeleton"
-import { useProfileStore } from "@/features/profile/profile.store"
+import { useProfileStore } from "@/features/profile/store/profile.store"
 
 function SummaryCardSkeleton() {
   return (
@@ -44,9 +44,9 @@ export function DashboardPage() {
   }
 
   const accountColors = [
-    { color: "text-db-primary-600", bg: "bg-db-surface-muted" },
-    { color: "text-db-accent-600", bg: "bg-db-accent-50" },
-    { color: "text-db-warning-600", bg: "bg-db-warning-50" },
+    { color: "text-eb-primary-600", bg: "bg-eb-surface-muted" },
+    { color: "text-eb-accent-600", bg: "bg-eb-accent-50" },
+    { color: "text-eb-warning-600", bg: "bg-eb-warning-50" },
   ] as const
 
   const cards = data
@@ -63,24 +63,24 @@ export function DashboardPage() {
           title: "Monthly Deposits",
           value: formatCurrency(data.monthlyDeposits),
           icon: ArrowDownLeftIcon,
-          color: "text-db-accent-600",
-          bg: "bg-db-accent-50",
+          color: "text-eb-accent-600",
+          bg: "bg-eb-accent-50",
         },
         {
           key: "monthly-withdrawals",
           title: "Monthly Withdrawals",
           value: formatCurrency(data.monthlyWithdrawals),
           icon: ArrowUpRightIcon,
-          color: "text-db-warning-600",
-          bg: "bg-db-warning-50",
+          color: "text-eb-warning-600",
+          bg: "bg-eb-warning-50",
         },
         {
           key: "recent-transactions",
           title: "Recent Transactions",
           value: data.recentTransactionsCount.toString(),
           icon: HistoryIcon,
-          color: "text-db-credit-600",
-          bg: "bg-db-credit-50",
+          color: "text-eb-credit-600",
+          bg: "bg-eb-credit-50",
         },
       ]
     : []
@@ -95,9 +95,9 @@ export function DashboardPage() {
         }
         title={`Welcome back, ${profile?.firstName ?? ""} ${profile?.lastName ?? ""}`}
       />
-      <div className="flex flex-col gap-md">
+      <div className="flex flex-col gap-eb-md">
         <DashboardQuickActions />
-        <div className="grid gap-md sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-eb-md sm:grid-cols-2 xl:grid-cols-4">
           {isLoading
             ? Array.from({ length: 6 }).map((_, i) => (
                 <SummaryCardSkeleton key={i} />

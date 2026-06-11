@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/features/auth/auth.store"
+import { useAuthStore } from "@/features/auth/store/auth.store"
 import type { ApiError } from "@/types"
 import { apiUrl } from "./config"
 
@@ -17,6 +17,10 @@ export class ApiClientError extends Error {
 }
 
 function isAuthEndpoint(path: string): boolean {
+  if (path.includes("unauthorized")) {
+    return false
+  }
+
   return path.startsWith("/api/auth/")
 }
 

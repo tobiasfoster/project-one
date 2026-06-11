@@ -18,7 +18,7 @@ export const Default: Story = {
         <CardDescription>Your current savings balance</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-2xl font-bold text-db-primary-900">$12,450.75</p>
+        <p className="text-2xl font-bold text-eb-primary-900">$12,450.75</p>
       </CardContent>
     </Card>
   ),

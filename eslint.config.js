@@ -12,6 +12,7 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     ignores: ['node_modules', 'dist', '.storybook', "**/*.js",],
+    plugins: {"@stylistic": stylistic},
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
@@ -32,6 +33,7 @@ export default defineConfig([
         },
       ],
       "react/react-in-jsx-scope": "off",
+      "@stylistic/curly-newline": ["error", "always"],
     },
     languageOptions: {
       parserOptions: {

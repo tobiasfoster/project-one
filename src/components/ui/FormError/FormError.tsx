@@ -9,7 +9,7 @@ export function FormError({
 }) {
   if (!children) return null
   return (
-    <p className={cn("text-xs text-db-danger-500", className)} role="alert">
+    <p className={cn("text-xs text-eb-danger-500", className)} role="alert">
       {children}
     </p>
   )

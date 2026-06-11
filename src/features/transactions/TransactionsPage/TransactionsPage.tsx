@@ -2,13 +2,13 @@ import { useNavigate, useSearch } from "@tanstack/react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ChevronLeftIcon } from "@/components/ui/icons/ChevronLeftIcon/ChevronLeftIcon"
 import { ChevronRightIcon } from "@/components/ui/icons/ChevronRightIcon/ChevronRightIcon"
-import { getTransactions } from "../transactions.api"
+import { getTransactions } from "../api/transactions.api"
 import { TransactionsFilters } from "../TransactionsFilters/TransactionsFilters"
 import { TransactionsTable } from "../TransactionsTable/TransactionsTable"
 import {
   resolveTransactionsSearch,
   type TransactionsSearch,
-} from "../transactions.search"
+} from "../utils"
 import { queryKeys } from "@/lib/api/query-keys"
 import { PageHeader } from "@/components/shared/PageHeader/PageHeader"
 import { ApiErrorState } from "@/components/shared/ApiErrorState/ApiErrorState"
@@ -81,7 +81,7 @@ export function TransactionsPage() {
 
       {isLoading
         ? (
-            <div className="space-y-sm">
+            <div className="space-y-eb-sm">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Skeleton key={i} className="h-12 rounded-lg" />
               ))}
@@ -104,8 +104,8 @@ export function TransactionsPage() {
                   />
 
                   {totalPages > 1 && (
-                    <div className="mt-md flex items-center justify-between">
-                      <p className="text-sm text-db-primary-500">
+                    <div className="mt-eb-md flex items-center justify-between">
+                      <p className="text-sm text-eb-primary-500">
                         Page
                         {" "}
                         {page}
@@ -119,7 +119,7 @@ export function TransactionsPage() {
                         {" "}
                         transactions)
                       </p>
-                      <div className="flex gap-sm">
+                      <div className="flex gap-eb-sm">
                         <Button
                           disabled={page <= 1}
                           size="sm"

@@ -31,17 +31,17 @@ export function Select({
 
   return (
     <BaseSelect.Root value={value} onValueChange={onValueChange}>
-      <div className="flex flex-col gap-sm">
+      <div className="flex flex-col gap-eb-sm">
         {label && (
-          <span id={labelId} className="text-sm font-medium text-db-primary-700">
+          <span className="text-sm font-medium text-eb-primary-700" id={labelId}>
             {label}
           </span>
         )}
         <BaseSelect.Trigger
           aria-labelledby={label ? labelId : undefined}
           className={cn(
-            "flex h-10 w-full items-center justify-between rounded-lg border border-db-primary-200 bg-db-surface px-sm text-sm text-db-primary-900",
-            "hover:border-db-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-db-accent-500",
+            "flex h-10 w-full items-center justify-between rounded-lg border border-eb-primary-200 bg-eb-surface px-eb-sm text-sm text-eb-primary-900",
+            "hover:border-eb-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eb-accent-500",
             className,
           )}
         >
@@ -49,22 +49,22 @@ export function Select({
             {selected?.label ?? placeholder}
           </BaseSelect.Value>
           <BaseSelect.Icon>
-            <ChevronDownIcon aria-hidden="true" className="h-4 w-4 text-db-primary-500" />
+            <ChevronDownIcon aria-hidden="true" className="h-4 w-4 text-eb-primary-500" />
           </BaseSelect.Icon>
         </BaseSelect.Trigger>
       </div>
       <BaseSelect.Portal>
         <BaseSelect.Positioner className="z-50" sideOffset={4}>
-          <BaseSelect.Popup className="max-h-60 min-w-[var(--anchor-width)] overflow-auto rounded-lg border border-db-primary-100 bg-db-surface py-xs shadow-lg">
+          <BaseSelect.Popup className="max-h-60 min-w-[var(--anchor-width)] overflow-auto rounded-lg border border-eb-primary-100 bg-eb-surface px-eb-xs shadow-lg">
             {options.map(option => (
               <BaseSelect.Item
                 key={option.value}
-                className="flex cursor-pointer items-center justify-between px-sm py-sm text-sm text-db-primary-800 outline-none data-[highlighted]:bg-db-surface-hover"
+                className="flex cursor-pointer items-center justify-between py-eb-sm px-eb-sm text-sm text-eb-primary-800 outline-none data-[highlighted]:bg-eb-surface-hover"
                 value={option.value}
               >
                 <BaseSelect.ItemText>{option.label}</BaseSelect.ItemText>
                 <BaseSelect.ItemIndicator>
-                  <CheckIcon aria-hidden="true" className="h-4 w-4 text-db-accent-600" />
+                  <CheckIcon aria-hidden="true" className="h-4 w-4 text-eb-accent-600" />
                 </BaseSelect.ItemIndicator>
               </BaseSelect.Item>
             ))}

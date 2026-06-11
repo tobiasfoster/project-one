@@ -20,21 +20,21 @@ export function DialogContent({
 }) {
   return (
     <BaseDialog.Portal>
-      <BaseDialog.Backdrop className="fixed inset-0 z-50 bg-db-brand-950/60 backdrop-blur-sm data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 transition-opacity" />
+      <BaseDialog.Backdrop className="fixed inset-0 z-50 bg-eb-brand-950/60 backdrop-blur-sm data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 transition-opacity" />
       <BaseDialog.Popup
         className={cn(
-          "fixed left-1/2 top-1/2 z-50 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl border border-db-primary-100 bg-db-surface p-lg shadow-xl",
+          "fixed left-1/2 top-1/2 z-50 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-xl border border-eb-primary-100 bg-eb-surface p-eb-lg shadow-xl",
           "data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0 transition-all",
           className,
         )}
       >
-        <div className="flex items-start justify-between gap-md">
+        <div className="flex items-start justify-between gap-eb-md">
           <div>
-            <BaseDialog.Title className="text-lg font-semibold text-db-primary-900">
+            <BaseDialog.Title className="text-lg font-semibold text-eb-primary-900">
               {title}
             </BaseDialog.Title>
             {description && (
-              <BaseDialog.Description className="mt-xs text-sm text-db-primary-500">
+              <BaseDialog.Description className="mt-eb-xs text-sm text-eb-primary-500">
                 {description}
               </BaseDialog.Description>
             )}
@@ -48,7 +48,7 @@ export function DialogContent({
             </BaseDialog.Close>
           )}
         </div>
-        <div className="mt-md">{children}</div>
+        <div className="mt-eb-md">{children}</div>
       </BaseDialog.Popup>
     </BaseDialog.Portal>
   )

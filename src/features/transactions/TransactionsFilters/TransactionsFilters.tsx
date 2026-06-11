@@ -23,7 +23,7 @@ export function TransactionsFilters({
   onChange,
 }: TransactionsFiltersProps) {
   return (
-    <div className="mb-lg grid gap-md rounded-xl border border-db-primary-100 bg-db-surface p-md sm:grid-cols-2 lg:grid-cols-4">
+    <div className="mb-eb-lg grid gap-eb-md rounded-xl border border-eb-primary-100 bg-eb-surface p-eb-md sm:grid-cols-2 lg:grid-cols-4">
       <Field>
         <FieldLabel htmlFor="startDate">From</FieldLabel>
         <Input

@@ -10,7 +10,7 @@ export function Spinner({ className, label = "Loading" }: SpinnerProps) {
   return (
     <Loader2Icon
       aria-label={label}
-      className={cn("h-5 w-5 animate-spin text-db-primary-500", className)}
+      className={cn("h-5 w-5 animate-spin text-eb-primary-500", className)}
       role="status"
     />
   )

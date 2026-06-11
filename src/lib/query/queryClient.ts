@@ -2,8 +2,8 @@ import { MutationCache, QueryCache, QueryClient } from "@tanstack/react-query"
 import { ApiClientError } from "@/lib/api/client"
 import { queryKeys } from "@/lib/api/query-keys"
 import { navigateTo } from "@/lib/navigation/navigation"
-import { useAuthStore } from "@/features/auth/auth.store"
-import { useProfileStore } from "@/features/profile/profile.store"
+import { useAuthStore } from "@/features/auth/store/auth.store"
+import { useProfileStore } from "@/features/profile/store/profile.store"
 
 function handleUnauthorized(error: unknown) {
   if (!(error instanceof ApiClientError) || error.status !== 401) return

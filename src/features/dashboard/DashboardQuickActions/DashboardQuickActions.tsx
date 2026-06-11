@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/Button/Button"
 
 export function DashboardQuickActions() {
   return (
-    <Card className="mt-lg">
+    <Card className="mt-eb-lg">
       <CardHeader>
         <CardTitle as="h2">Quick Actions</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-wrap gap-sm">
+      <CardContent className="flex flex-wrap gap-eb-sm">
         <Button render={<Link to="/accounts" />} variant="secondary">
           View Accounts
         </Button>
