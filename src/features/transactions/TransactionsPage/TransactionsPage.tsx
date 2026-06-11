@@ -7,7 +7,6 @@ import { TransactionsFilters } from "../TransactionsFilters/TransactionsFilters"
 import { TransactionsTable } from "../TransactionsTable/TransactionsTable"
 import {
   resolveTransactionsSearch,
-  type TransactionsSearch,
 } from "../utils"
 import { queryKeys } from "@/lib/api/query-keys"
 import { PageHeader } from "@/components/shared/PageHeader/PageHeader"
@@ -15,6 +14,7 @@ import { ApiErrorState } from "@/components/shared/ApiErrorState/ApiErrorState"
 import { EmptyState } from "@/components/shared/EmptyState/EmptyState"
 import { Button } from "@/components/ui/Button/Button"
 import { Skeleton } from "@/components/ui/Skeleton/Skeleton"
+import type { TransactionsSearch } from "../types"
 
 const LIMIT = 8
 

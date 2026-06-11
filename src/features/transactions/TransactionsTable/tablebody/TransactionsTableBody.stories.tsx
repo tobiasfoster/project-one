@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table"
 import { fn } from "storybook/test"
 import { TransactionsTableBody } from "./TransactionsTableBody"
-import { createTransactionColumns } from "../../utils/create-columns"
+import { createTransactionColumns } from "../../utils"
 import { transactions } from "@/mocks/data/transactions"
 import { WithRouter } from "@/test/storybook"
 

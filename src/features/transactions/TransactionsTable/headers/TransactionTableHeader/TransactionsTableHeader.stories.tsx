@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table"
 import { fn } from "storybook/test"
 import { TransactionsTableHeader } from "./TransactionsTableHeader"
-import { createTransactionColumns } from "../utils/create-columns"
+import { createTransactionColumns } from "../../../utils"
 import { transactions } from "@/mocks/data/transactions"
 
 const noop = fn()
