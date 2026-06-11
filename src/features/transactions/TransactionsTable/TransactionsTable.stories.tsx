@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
 import { TransactionsTable } from "./TransactionsTable"
 import { transactions } from "@/mocks/data/transactions"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 const meta = {
   title: "Features/Transactions/TransactionsTable",
@@ -10,7 +10,7 @@ const meta = {
   tags: ["autodocs"],
   parameters: { layout: "padded" },
   // Description cells render <Link>s to the detail route.
-  decorators: [withRouter("/app/transactions", "/transactions")],
+  decorators: [WithRouter("/app/transactions", "/transactions")],
   args: { onToggleSort: fn(), sortBy: "date", sortOrder: "desc" },
 } satisfies Meta<typeof TransactionsTable>
 

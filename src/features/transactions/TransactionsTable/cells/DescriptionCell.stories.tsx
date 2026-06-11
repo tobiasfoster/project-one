@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { DescriptionCell } from "./DescriptionCell"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 const meta = {
   title: "Features/Transactions/Cells/DescriptionCell",
   component: DescriptionCell,
   tags: ["autodocs"],
   // Renders a router-aware <Link> to the transaction detail page.
-  decorators: [withRouter("/app/transactions", "/transactions")],
+  decorators: [WithRouter("/app/transactions", "/transactions")],
 } satisfies Meta<typeof DescriptionCell>
 
 export default meta

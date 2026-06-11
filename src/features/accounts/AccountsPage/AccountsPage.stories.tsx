@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { delay, http, HttpResponse } from "msw"
 import { AccountsPage } from "./AccountsPage"
 import { accounts } from "@/mocks/data/accounts"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 const meta = {
   title: "Features/Accounts/AccountsPage",
   component: AccountsPage,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
-  decorators: [withRouter("/app/accounts", "/accounts")],
+  decorators: [WithRouter("/app/accounts", "/accounts")],
 } satisfies Meta<typeof AccountsPage>
 
 export default meta

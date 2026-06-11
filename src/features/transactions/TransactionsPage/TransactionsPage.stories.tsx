@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { delay, http, HttpResponse } from "msw"
 import { TransactionsPage } from "./TransactionsPage"
 import { transactions } from "@/mocks/data/transactions"
-import { withRouter } from "@/test/storybook"
+import { WithRouter } from "@/test/storybook"
 
 /** Mimics the real API's sort + pagination so filters and paging work. */
 function buildTransactionsResponse(url: URL) {
@@ -34,7 +34,7 @@ const meta = {
   component: TransactionsPage,
   tags: ["autodocs"],
   parameters: { layout: "fullscreen" },
-  decorators: [withRouter("/app/transactions", "/transactions")],
+  decorators: [WithRouter("/app/transactions", "/transactions")],
 } satisfies Meta<typeof TransactionsPage>
 
 export default meta
