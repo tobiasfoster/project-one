@@ -26,7 +26,7 @@ function makeQueryClient() {
  * Provides a fresh React Query client per story so cached data never bleeds
  * between stories.
  */
-export const withQueryClient: Decorator = (Story) => {
+export const WithQueryClient: Decorator = (Story) => {
   const [queryClient] = useState(makeQueryClient)
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,15 +39,15 @@ export const withQueryClient: Decorator = (Story) => {
  * Route ids mirror the real application router (see `app/Router/Router.tsx`) so
  * components relying on `useParams`/`useSearch` with a `from` resolve correctly.
  */
-export type ActiveRouteId =
-  | "/login"
-  | "/register"
-  | "/app/dashboard"
-  | "/app/accounts"
-  | "/app/accounts/$id"
-  | "/app/transactions"
-  | "/app/transactions/$id"
-  | "/app/profile"
+export type ActiveRouteId
+  = | "/login"
+    | "/register"
+    | "/app/dashboard"
+    | "/app/accounts"
+    | "/app/accounts/$id"
+    | "/app/transactions"
+    | "/app/transactions/$id"
+    | "/app/profile"
 
 /**
  * Renders the story inside a real TanStack Router so `<Link>`, `useNavigate`,
@@ -56,7 +56,7 @@ export type ActiveRouteId =
  * @param active        Which route should render the story component.
  * @param initialEntry  The URL the in-memory history starts at.
  */
-export function withRouter(
+export function WithRouter(
   active: ActiveRouteId,
   initialEntry: string,
 ): Decorator {
@@ -144,7 +144,7 @@ export function withRouter(
 }
 
 /** Seeds the persisted profile store so greeting/avatar UIs have data. */
-export function withProfile(profile: Profile | null): Decorator {
+export function WithProfile(profile: Profile | null): Decorator {
   return function ProfileDecorator(Story) {
     useProfileStore.setState({ profile })
     return <Story />
