@@ -22,6 +22,8 @@ interface ProfileFormProps {
 }
 
 export function ProfileForm({ profile, avatarPreview }: ProfileFormProps) {
+  "use no memo"
+
   const queryClient = useQueryClient()
   const setProfile = useProfileStore(s => s.setProfile)
   const [serverError, setServerError] = useState("")
