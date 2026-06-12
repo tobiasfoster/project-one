@@ -7,7 +7,7 @@ import { WithRouter } from "@/test/storybook"
 const { ...sessionUser } = users[0]
 
 const meta = {
-  title: "Features/Profile/LoginForm",
+  title: "Features/Auth/LoginForm",
   component: LoginForm,
   tags: ["autodocs"],
   decorators: [WithRouter("/login", "/login")],
