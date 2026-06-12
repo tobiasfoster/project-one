@@ -59,7 +59,7 @@ export function LoginForm({
     <form className="space-y-eb-md" noValidate onSubmit={handleSubmit(onSubmit)}>
       {serverError && (
         <div
-          className="rounded-lg bg-eb-danger-50 py-eb-sm py-eb-sm text-sm text-eb-danger-600"
+          className="rounded-lg bg-eb-danger-50 p-eb-sm text-sm text-eb-danger-600"
           role="alert"
         >
           {serverError}
